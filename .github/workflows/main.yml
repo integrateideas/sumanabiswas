@@ -1,0 +1,13 @@
+name: Move new issues into To Do
+on:
+  issues:
+    types: [opened]
+jobs:
+  automate-project-columns:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: alex-page/github-project-automation-plus@v0.2.2
+        with:
+          project: ibp-branch-template
+          column: To do
+          repo-token: ${{ secrets.GH_TOKEN }
